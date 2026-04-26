@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eGardener Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <img src="assets/logo.png" alt="eGardener Logo" class="logo">
+        <h1>Hệ thống Giám sát Vườn cây eGardener</h1>
+        <div id="status-time">
+            Trạng thái: <span id="conn-status" class="status-error">Đang kết nối...</span> | 
+            Cập nhật lúc: <span id="last-update">--:--:--</span>
+        </div>
+    </header>
+
+    <main>
+        <section class="sensor-grid">
+            <div class="card">
+                <img src="assets/temp.png" alt="Nhiệt độ">
+                <div class="info">
+                    <p class="title">Nhiệt độ (T)</p>
+                    <p class="value" id="temp-value">-- °C</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <img src="assets/humid.png" alt="Độ ẩm không khí">
+                <div class="info">
+                    <p class="title">Độ ẩm không khí (H)</p>
+                    <p class="value" id="humid-value">-- %</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="assets/sun.png" alt="Ánh sáng">
+                <div class="info">
+                    <p class="title">Cường độ ánh sáng (L)</p>
+                    <p class="value" id="light-value">-- %</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="assets/soil.png" alt="Độ ẩm đất">
+                <div class="info">
+                    <p class="title">Độ ẩm đất (S)</p>
+                    <p class="value" id="soil-value">-- %</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="control-panel">
+            <h2>Điều khiển Thủ công</h2>
+            <div class="controls">
+                
+                <button class="actuator-btn off" data-actuator="irrigation" id="irrigation-btn">
+                    <img src="assets/drops.png" alt="Tưới">
+                    <span class="btn-text">BẬT TƯỚI TIÊU</span>
+                </button>
+
+                <button class="actuator-btn off" data-actuator="light" id="light-btn">
+                    <img src="assets/light.png" alt="Ánh sáng">
+                    <span class="btn-text">BẬT ĐÈN VƯỜN</span>
+                </button>
+            </div>
+
+            <div id="log-message"></div>
+        </section>
+
+        <section class="control-panel-auto">
+            <h2>Điều khiển Tự động</h2>
+            <div class="controls">
+                <button class="actuator-btn off" data-actuator="irrigation" id="irrigation-auto-btn">
+                    <img src="assets/drops.png" alt="Tưới">
+                    <span class="btn-text">BẬT TỰ ĐỘNG TƯỚI</span>
+                </button>
+                <button class="actuator-btn off" data-actuator="light" id="light-auto-btn">
+                    <img src="assets/light.png" alt="Ánh sáng">
+                    <span class="btn-text">BẬT TỰ ĐỘNG ĐÈN</span>
+                </button>
+            </div>
+            <div id="log-message-auto"></div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
